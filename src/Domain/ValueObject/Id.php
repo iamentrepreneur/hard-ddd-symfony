@@ -23,7 +23,7 @@ class Id
 
     public function assertIdIsValid($value): void
     {
-        if ($value >= 0) {
+        if ($value <= 0) {
             throw new InvalidArgumentException('Идентификатор должен быть натуральным числом');
         }
     }

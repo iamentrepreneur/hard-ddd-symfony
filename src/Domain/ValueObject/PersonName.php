@@ -87,14 +87,14 @@ class PersonName
 
     public function assertNameIsValid($value): void
     {
-        if (preg_match('/^[А-ЯЁ][а-яё]+$/u', $value)) {
+        if (!preg_match('/^[А-ЯЁ][а-яё]+$/u', $value)) {
             throw new InvalidArgumentException('Имя должно состоять из русских символов');
         }
     }
 
     public function assertSurNameIsValid($value): void
     {
-        if (preg_match('/^[А-ЯЁ][а-яё]+$/u', $value)) {
+        if (!preg_match('/^[А-ЯЁ][а-яё]+$/u', $value)) {
             throw new InvalidArgumentException('Фамилия должно состоять из русских символов');
         }
     }
@@ -104,7 +104,7 @@ class PersonName
         if (null === $value) {
             return;
         }
-        if (preg_match('/^[А-ЯЁ][а-яё]+$/u', $value)) {
+        if (!preg_match('/^[А-ЯЁ][а-яё]+$/u', $value)) {
             throw new InvalidArgumentException('Отчество должно состоять из русских символов');
         }
     }
